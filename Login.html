@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <style>
+        :lang(ko) body {
+            line-height: 1.41176;
+        }
+        :lang(ko) body {
+            font-size: 1.2rem;
+        }
+        #app__container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            min-height: 100vh;
+            background-color: #fff;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+        body :lang(ko) {
+            font-family: var(--artdeco-typography-ko);
+        }
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        .app__content {
+            display: flex;
+            -webkit-box-flex: 1;
+            flex: 1;
+            float: none;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .nav-logo {
+            align-self: flex-start;
+            margin: 24px 0;
+        }
+        a {
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: 0;
+            color: #0073b1;
+        }
+        a {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        a:-webkit-any-link {
+            color: -webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .card-layout {
+            width: 352px;
+            box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+            padding: 24px 32px 32px;
+            border-radius: 8px;
+            margin: 0 auto;
+            background: #fff;
+        }
+        :lang(ko) .header__content .header__content__heading {
+            line-height: 1.25;
+        }
+        .header__content .header__content__heading {
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+            padding: 0 0 4px 0;
+        }
+        h1 {
+            display: block;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        :lang(ko) .header__content .header__content__subheading {
+            line-height: 1.33333;
+        }
+        :lang(ko) .header__content .header__content__subheading {
+            font-size: 1.5rem;
+        }
+        .header__content .header__content__subheading {
+            font-weight: 400;
+            color: rgba(0,0,0,0.9);
+        }
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        .login__form {
+            margin: auto;
+        }
+        form {
+            position: relative;
+        }
+        input, select {
+            vertical-align: middle;
+        }
+        input {
+            text-rendering: auto;
+            color: -internal-light-dark(black, white);
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            -webkit-rtl-ordering: logical;
+            margin: 0em;
+            font: 400 13.3333px Arial;
+        }
+        .mt-24 {
+            margin-top: 24px;
+        }
+        .form__input--floating {
+            position: relative;
+            background-color: #fff;
+        }
+        :lang(ko) .form__input--floating>input {
+            line-height: 1.26316;
+        }
+        :lang(ko) .form__input--floating>input {
+            font-size: 1.9rem;
+        }
+        .form__input--floating>input {
+            font-weight: 400;
+            color: rgba(0,0,0,0.9);
+            position: relative;
+            z-index: 1;
+            height: 52px;
+            padding: 28px 12px 6px;
+            border-radius: 4px !important;
+        }
+        textarea, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+            transition-duration: 334ms;
+            border-radius: 2px;
+            border: 1px solid rgba(0,0,0,0.6);
+            width: 100%;
+            outline: 0;
+            box-sizing: border-box;
+            background-color: transparent;
+        }
+        :lang(ko) .form__input--floating>label {
+            line-height: 1.26316;
+        }
+        :lang(ko) .form__input--floating>label {
+            font-size: 1.9rem;
+        }
+        .form__input--floating>label {
+            font-weight: 400;
+            color: rgba(0,0,0,0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 14px 0 0 12px;
+            margin: 0;
+            transition: .2s all;
+        }
+        .form__input--floating * {
+            box-sizing: border-box;
+        }
+        label {
+            cursor: default;
+        }
+        :lang(ko) .login__form .form__label--error {
+            line-height: 1.33333;
+        }
+        :lang(ko) .login__form .form__label--error {
+            font-size: 1.5rem;
+        }
+        .login__form .form__label--error {
+            margin: 4px 0 0 0;
+            text-align: left;
+            color: #d11124;
+            font-weight: 500;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .form__input--floating>input#password {
+            padding-right: 52px;
+        }
+        input[type="password" i] {
+            -webkit-text-security: disc !important;
+        }
+        .login__form .button__password-visibility {
+            background-color: rgba(0,0,0,0);
+            border: 0; 
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            height: 24px;
+            line-height: 24px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 8px;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            color: #0a66c2 !important;
+            border-radius: 28px !important;
+            position: absolute;
+            z-index: 1;
+            top: 14px;
+            right: 4px;
+        }
+        .forgot-password {
+            position: relative;
+            left: -8px;
+            margin-top: 8px;
+        }
+        .btn__tertiary--medium {
+            background-color: rgba(0,0,0,0);
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            height: 32px;
+            line-height: 32px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 8px;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            color: #0a66c2 !important;
+            border-radius: 28px !important;
+            text-decoration: none;
+        }
+        .login__form .login__form_action_container {
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+            padding-top: 16px;
+        }
+        .join-now {
+            text-align: center;
+            margin: 40px 0 0;
+        }
+        .join-now #join_now {
+            position: relative;
+            right: 4px;
+            bottom: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id = "app__container">
+        <main class = "app__content" role="main">
+            <a href = "main_page.html"><img class = "nav-logo" src = "./img/logo3.PNG" alt="IAM site logo"></a>
+            <div id="" class="card-layout">
+                <div id="organic-div" class="">
+                    <div class="header__content ">
+                        <h1 class="header__content__heading ">로그인</h1>
+                        <p class="header__content__subheading ">자신을 표현해보세요</p>
+                    </div>
+                    <form method="post" class="login__form" action="/checkpoint/lg/login-submit" novalidate="">
+                        <code id="login_form_validation_error_username" style="display: none;"><!--"사용자이름 입력"--></code>
+                        <code id="consumer_login__text_plain__large_username" style="display: none;"><!--"이메일 주소나 전화번호는 3-128자여야 합니다."--></code>
+                        <code id="consumer_login__text_plain__no_username" style="display: none;"><!--"이메일 주소나 전화번호를 입력하세요."--></code>
+                        <div class="form__input--floating mt-24">
+                            <input id="username" name="session_key" type="text" aria-describedby="error-for-username" required="" validation="email|tel" class="" autofocus="" aria-label="이메일 또는 전화">
+                            <label class="form__label--floating" for="username" aria-hidden="true">이메일 또는 전화</label>
+                            <div error-for="username" id="error-for-username" class="form__label--error  hidden" role="alert" aria-live="assertive"></div>
+                        </div>
+                        <code id="domainSuggestion" style="display: none;"><!--false--></code>
+                        <code id="consumer_login__text_plain__empty_password" style="display: none;"><!--"비밀번호를 입력하세요."--></code>
+                        <code id="consumer_login__text_plain__small_password" style="display: none;"><!--"비밀번호는 6자 이상이어야 합니다."--></code>
+                        <code id="consumer_login__text_plain__large_password" style="display: none;"><!--"비밀번호는 최대 400자여야 합니다."--></code>
+                        <code id="consumer_login__text_plain__wrong_password" style="display: none;"><!--"비밀번호가 맞지 않습니다. 다시하기 "--></code>
+                        <code id="consumer_login__text_plain__large_password_200_chars" style="display: none;"><!--"비밀번호는 최대 200자여야 합니다."--></code>
+                        <div class="form__input--floating mt-24">
+                            <input id="password" type="password" aria-describedby="error-for-password" name="session_password" required="" validation="password" class="" aria-label="비밀번호">
+                            <label for="password" class="form__label--floating" aria-hidden="true">비밀번호</label>
+                            <span id="password-visibility-toggle" class="button__password-visibility" role="button" tabindex="0">표시</span>
+                            <div error-for="password" id="error-for-password" class="form__label--error   hidden" role="alert" aria-live="assertive"></div>
+                        </div>
+                        <a href="/checkpoint/rp/request-password-reset?session_redirect=https%3A%2F%2Fkr%2Elinkedin%2Ecom%2Fjobs&amp;trk=guest_homepage-jobseeker_nav-header-signin" class="btn__tertiary--medium forgot-password" data-cie-control-urn="forgot-password-btn">비밀번호를 잊으셨나요?</a>
+                        <input type="hidden" name="loginFlow" id="loginFlow" value="REMEMBER_ME_OPTIN">
+                        <div class="login__form_action_container ">
+                            <button class="btn__primary--large from__button--floating" data-litms-control-urn="login-submit" type="submit" aria-label="로그인">로그인</button>
+                        </div>
+                    </form>
+                    <div class="alternate-signin-container">
+                        <div id="or-separator" class="or-separator mt-12 hidden">
+                            <span class="or-text">또는</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="join-now">IAM이 처음이세요? 
+                <a href="Join.html" class="btn__tertiary--medium" id="join_now">회원 가입</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+

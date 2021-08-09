@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background-color : rgb(255, 255, 255)
+        }
+
+        main {
+            display : flex;
+            justify-items: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top : 5rem;  
+            margin-bottom : 5rem;
+        }
+
+        #profile {
+            width : 200px;
+            height : 200px;
+            margin-right: 30px;
+        }
+        
+        .profile {
+            display : flex;
+            justify-content: center;
+            border-bottom : 1px solid rgb(185, 182, 182);
+            height : 225px;
+            width : 1050px;
+        }
+
+        div.item {
+            margin-right : 100px;
+        }
+
+        button.btn_setting {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            
+            background: var(--button-bg-color);
+            color: var(--button-color);
+            
+            margin: 0;
+            padding: 0.5rem 1rem;
+            
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            text-align: center;
+            text-decoration: none;
+            
+            border: none;
+            border-radius: 4px;
+            
+            display: inline-block;
+            width: auto;
+            
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            
+            cursor: pointer;
+            
+            transition: 0.5s;
+        }
+        button:active,
+        button:hover,
+        button:focus {
+            background: var(--button-hover-bg-color);
+            outline: 0;
+        }
+        button:disabled {
+            opacity: 0.5;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+        }
+
+        body {
+            margin: 0;
+            background: #eee;
+        }
+
+       .name {
+            font-size: 50px;
+       }
+
+       .info_1 {
+           display : flex;
+           flex-direction: column;
+       }
+
+       .info_2 {
+            display : flex;
+            flex-direction: row;  
+        }
+
+        h2 {
+            margin-right : 20px
+        }
+
+        span {
+            margin-right : 30px;
+        }
+
+        .Name {
+            margin-top : 30px;
+        }
+
+        .post {
+            display : flex;
+            flex-direction: column;
+            height : 325px;;
+            width : 1050px;
+        }
+
+        div.card {
+            height : 325px;
+            display : flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            border-bottom :  1px solid rgb(185, 182, 182);
+            width : 1050px;
+        }
+        label {
+            margin-left : 10px;
+        }
+        div.picture {
+            margin : 10px;
+            display : flex;
+            flex-direction : row;
+        }
+
+        div.picture img{
+            margin-right : 10px;
+        }
+        .profile_change_button{
+            text-decoration:none
+
+        }
+
+
+        /*         -----------------------------------------------              */
+
+        .nav {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .nav {
+            max-width: 1128px;
+            margin: auto;
+        }
+        .nav {
+            padding: 12px 0 16px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: nowrap;
+        }
+        .nav__cta-container {
+            flex-wrap: nowrap;
+            flex-shrink: 0;
+        }
+        .nav__cta-container {
+            -webkit-box-ordinal-group: 4;
+            order: 3;
+            display: flex;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+        }
+        .nav__button-tertiary.nav__button-tertiary {
+            background-color: rgba(0,0,0,0);
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            height: 32px;
+            line-height: 32px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 8px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 4px;
+            color: rgba(0,0,0,0.6);
+        }
+        .nav__button-secondary.nav__button-secondary {
+            background-color: rgba(0,0,0,0);
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            height: 32px;
+            line-height: 32px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 24px;
+            box-shadow: inset 0 0 0 1px #0a66c2;
+            color: #0a66c2;
+        }
+        .nav__button-secondary:hover{
+            background: skyblue;
+        }
+        .nav-logo {
+            width: 56px;
+            height: 56px;
+        }
+        .nav-logo {
+            display: block;
+            color: #0a66c2;
+        }
+
+        body :lang(ko) {
+            font-family: var(--artdeco-typography-ko);
+        }
+        .base-serp-page__header {
+            background: #fff;
+            margin-bottom: 1px;
+            padding: 0 16px;
+        }
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        .base-serp-page__header .nav, .base-serp-page__filters, .base-serp-page__content {
+            max-width: 1128px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        body :lang(ko) {
+            font-family: var(--artdeco-typography-ko);
+        }
+        .nav .search-bar {
+            -webkit-box-ordinal-group: 3;
+            order: 2;
+        }
+        .search-bar {
+            border-radius: 4px;
+        }
+        .search-bar, .search-bar__mobile-wrapper {
+            display: flex;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            height: 40px;
+            max-width: 100%;
+        }
+        .search-bar {
+            margin: 0 32px;
+            border-radius: 2px;
+        }
+        .search-bar {
+            background-color: rgba(199,209,216,0.35);
+            position: relative;
+            min-width: 0;
+        }
+        :lang(ko) .switcher-tabs__placeholder {
+            line-height: 1.41176;
+        }
+        :lang(ko) .switcher-tabs__placeholder {
+            font-size: 1.2rem;
+        }
+        .switcher-tabs__placeholder {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            padding: 0 12px 0 16px;
+            color: rgba(0,0,0,0.6);
+            border-right: 1px solid rgba(0,0,0,0.15);
+        }
+        .switcher-tabs__button, .switcher-tabs__placeholder {
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button, input {
+            border: 1px solid transparent;
+        }
+        button {
+            background-color: transparent;
+            padding: 0;
+        }
+        button {
+            appearance: auto;
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            text-align: center;
+            font: 400 13.3333px Arial;
+        }
+        .switcher-tabs__placeholder-text {
+            margin: auto;
+        }
+        .lazy-load, .lazy-loaded, [data-delayed-url], [data-delayed-poster], [data-delayed-background] {
+            transition: opacity 334ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .lazy-loaded {
+            opacity: 1;
+        }
+        .switcher-tabs__caret-down-filled {
+            display: block;
+            margin: auto 0;
+        }
+        .switcher-tabs__caret-down-filled {
+            min-height: 24px;
+            min-width: 24px;
+            height: 24px;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+        svg:not(:root) {
+            overflow: hidden;
+        }
+        .search-bar[data-current-search-type="JOBS"] .base-search-bar[data-searchbar-type="JOBS"], .search-bar[data-current-search-type="PEOPLE"] .base-search-bar[data-searchbar-type="PEOPLE"], .search-bar[data-current-search-type="LEARNING"] .base-search-bar[data-searchbar-type="LEARNING"] {
+            display: flex;
+        }
+        .search-bar .base-search-bar {
+            border: none;
+        }
+        .base-search-bar {
+            width: 100%;
+            min-width: 0;
+            border-radius: 2px;
+        }
+        .base-search-bar {
+            height: 100%;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            flex-basis: 0;
+            -webkit-box-align: center;
+            align-items: center;
+            cursor: text;
+        }
+        .base-search-bar__form {
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+            margin: 0;
+        }
+        .base-search-bar__form {
+            width: 100%;
+            height: 100%;
+        }
+        .search-bar .dismissable-input, .search-bar .dismissable-input:focus, .search-bar .dismissable-input.focus, .search-bar .dismissable-input:hover, .search-bar .dismissable-input.hover, .search-bar .dismissable-input:active {
+            background: transparent;
+            box-shadow: none;
+        }
+        .base-search-bar .typeahead-input, .base-search-bar .search-input {
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            height: 100%;
+            border: none;
+            border-radius: 0;
+            border-right: 1px solid rgba(0,0,0,0.15);
+        }
+        .dismissable-input {
+            color: rgba(0,0,0,0.9);
+        }
+        .dismissable-input {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            min-width: 0;
+            position: relative;
+        }
+        :lang(ko) .dismissable-input__input {
+            line-height: 1.41176;
+        }
+        :lang(ko) .dismissable-input__input {
+            font-size: 1.2rem;
+        }
+        .dismissable-input__input[placeholder] {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .dismissable-input__input {
+            font-weight: 400;
+            color: rgba(0,0,0,0.9);
+            background-color: transparent;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            height: 100%;   
+            -webkit-box-flex: 1;
+            flex: 1;
+            padding-left: 8px;
+            -webkit-appearance: none;
+        }
+        input, select {
+            vertical-align: middle;
+        }
+        input[type="search" i] {
+            padding: 1px 2px;
+        }
+        input {
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            text-align: start;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            margin: 0em;
+            font: 400 13.3333px Arial;
+        }
+        .dismissable-input__button--show {
+            cursor: pointer;
+            visibility: visible;
+        }
+        .dismissable-input__button {
+            height: 100%;
+            min-width: 24px;
+            margin-right: 8px;
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+        .screen-reader-text {
+            height: 1px;
+            left: -10000px;
+            overflow: hidden;
+            position: absolute;
+            top: auto;
+            width: 1px;
+        }
+        .dismissable-input__button--show {
+            cursor: pointer;
+            visibility: visible;
+        }
+        svg {
+            width: 16;
+            height: 16;
+        }
+        g{
+            fill: none;
+            fill-rule: evenodd;
+        }
+        .base-search-bar__submit-btn {
+            display: block;
+            height: 100%;
+            flex-basis: 40px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .base-search-bar__search-icon {
+            margin: 0 auto;
+        }
+        .top-card-layout__entity-info-container {
+            display: flex;
+        }
+        .top-card-layout__entity-info {
+            -webkit-box-flex: 1;
+            flex: 1 0;
+        }
+        a, a:focus, a:hover {
+            color: #0a66c2;
+        }
+        a {
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: 0;
+        }
+        a {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        :lang(ko) .top-card-layout__title {
+            line-height: 1.33333;
+        }
+        .top-card-layout__title {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+            margin-bottom: 0;
+        }
+        h2 {
+            display: block;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        :lang(ko) .top-card-layout__second-subline {
+            line-height: 1.33333;
+        }
+        :lang(ko) .top-card-layout__second-subline {
+            font-size: 1rem;
+        }
+        .top-card-layout__second-subline {
+            font-weight: 400;
+            color: rgba(0,0,0,0.6);
+            margin-top: 4px;
+        }h4, .medium-text {
+            font-style: normal;
+        }
+        h4 {
+            display: block;
+            margin-block-start: 1.33em;
+            margin-block-end: 1.33em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        :lang(ko) .topcard__flavor-row {
+            line-height: 1.41176;
+        }
+        :lang(ko) .topcard__flavor-row {
+            font-size: 1rem;
+        }
+        .topcard__flavor-row {
+            width: 100%;
+            margin-bottom: 4px;
+        }
+        .typeahead__label, .company-branding__ranking, .topcard__flavor-row, .topcard__flavor--black-link, .compensation__salary, .compensation__addition-items, .career-pathway__sneak-peek-link, .unify-apply-page__job-title, .unify-email-verification-form__resend-code-link {
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+        }
+        :lang(ko) .topcard__flavor {
+            line-height: 1.41176;
+        }
+        :lang(ko) .topcard__flavor {
+            font-size: 1rem;
+        }
+        .topcard__flavor {
+            display: inline;
+        }
+        .topcard__org-name-link {
+            font-weight: 400;
+        }
+        .see-who-was-hired.face-pile {
+            margin-top: 8px;
+        }
+        .face-pile {
+            display: flex;
+        }
+        .see-who-was-hired.face-pile .face-pile__images-container {
+            align-self: center;
+        }
+        .face-pile__images-container {
+            flex-shrink: 0;
+            margin-right: 8px;
+            line-height: 1;
+        }
+        .lazy-load, .lazy-loaded, [data-delayed-url], [data-delayed-poster], [data-delayed-background] {
+            transition: opacity 334ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .face-pile__image {
+            border: 1px solid rgba(0,0,0,0);
+        }
+        .artdeco-entity-image--circle-1 {
+            width: 32px;
+            height: 32px;
+            box-sizing: border-box;
+            background-clip: content-box;
+            border-radius: 49.9%;
+        }
+        .artdeco-entity-image {
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        .face-pile__image--1:not(:first-child) {
+            margin-left: -16px;
+        }
+        :lang(ko) .see-who-was-hired.face-pile .face-pile__cta {
+            line-height: 1.33333;
+        }
+        :lang(ko) .see-who-was-hired.face-pile .face-pile__cta {
+            font-size: 1rem;
+        }
+        .see-who-was-hired.face-pile .face-pile__cta, .see-who-was-hired.face-pile .face-pile__cta:focus, .see-who-was-hired.face-pile .face-pile__cta:hover {
+            color: #0a66c2;
+        }
+        .see-who-was-hired.face-pile .face-pile__cta {
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: 0;
+        }
+        .see-who-was-hired.face-pile .face-pile__cta {
+            display: block;
+            padding-left: 4px;
+        }
+        .top-card-layout__cta-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -12px;
+        }
+        .top-card-layout__cta.top-card-layout__cta {
+            height: auto;
+        }
+        .apply-button {
+            max-height: 34px;
+            display: inline-flex;
+        }
+        .top-card-layout__cta--primary {
+            border: 0;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 40px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 24px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 24px;
+            background-color: #0a66c2;
+        }
+        .top-card-layout__cta {
+            margin-top: 16px;
+            margin-left: 12px;
+        }
+        .apply-button {
+            background-color: #0073b1;
+            border: 0;
+            border-radius: 2px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 24px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            -webkit-transition-duration: 167ms;
+            transition-duration: 167ms;
+            -webkit-transition-property: background-color,color,-webkit-box-shadow;
+            transition-property: background-color,color,-webkit-box-shadow;
+            transition-property: background-color,box-shadow,color;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 24px;
+            background-color: #0a66c2;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            max-width: initial;
+        }.apply-button__offsite-apply-icon-svg {
+            display: inline-flex;
+            vertical-align: middle;
+            margin: -4px 0 0 4px;
+        }
+        .top-card-layout__cta--secondary, .top-card-layout__cta--secondary:focus, .top-card-layout__cta--secondary:hover {
+            color: #0a66c2;
+        }
+        .top-card-layout__cta--secondary {
+            max-height: 34px;
+            background-color: rgba(0,0,0,0);
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 40px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 24px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 24px;
+            box-shadow: inset 0 0 0 1px #0a66c2;
+            z-index: 0;
+            border-radius: 24px;
+            box-shadow: inset 0 0 0 1px #0a66c2;
+        }
+    </style>
+</head>
+<body>
+    <header class = "base-serp-page__header global-alert=offset">
+        <nav class = "nav" aria-label="기본">
+            <a href = "main_page.html"><img class = "nav-logo" src = "./img/logo3.PNG" alt="IAM site logo"></a>
+
+            <section class = "search-bar">
+                <div class ="switcher-tabs__trigger-and-tabs">
+                    <button aria-expanded="false" class="switcher-tabs__placeholder">
+                        <span class ="switcher-tabs__placeholder-text">정보</span>
+                        <icon class ="switcher-tabs__caret-down-filled onload lazy-loaded" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24px" height="24px" class="artdeco-icon lazy-loaded" focusable="false">
+                                <path d="M5,9h14l-6.2,6.7C12.6,15.9,12.3,16,12,16c-0.3,0-0.6-0.1-0.8-0.3L5,9z" fill="currentColor"></path>
+                            </svg>
+                        </icon>
+                    </button>
+                </div>
+                <section class ="base-search-bar">
+                    <form class="base-search-bar__form" role="search">
+                        <section class="dismissable-input typeahead-input keywords-typeahead-input" role="combobox" aria-owns="job-search-bar-keywords-typeahead-list" aria-haspopup="listbox" aria-expanded="false">
+                            <input aria-autocomplete="list" aria-controls="job-search-bar-keywords-typeahead-list" aria-label="직함이나 회사 검색" name="keywords" class="dismissable-input__input"  placeholder="직함이나 회사 검색" autocomplete="off" maxlength="500" type="search">
+                                <button class="dismissable-input__button dismissable-input__button--show" data-tracking-control-name="public_jobs_dismissable-input-clear" type="button">
+                                    <label class="screen-reader-text">닫기</label>
+                                    <icon class="dismissable-input__button-icon lazy-loaded" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" focusable="false" class="lazy-loaded">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path fill="currentColor" d="M7.90356 9.19393l-3.3763 3.3763-1.29037-1.29037 3.3763-3.3763-3.3763-3.3763 1.29037-1.29037 3.3763 3.3763 3.3763-3.3763 1.29037 1.29037-3.3763 3.3763 3.3763 3.3763-1.29037 1.29037z"></path>
+                                            <path d="M0 0h16v16H0z"></path>
+                                        </g>
+                                    </svg></icon>
+                                </button>
+                        </section>
+                    </form>
+                </section>
+                <section class="dismissable-input typeahead-input location-typeahead-input" role="combobox" aria-owns="job-search-bar-location-typeahead-list" aria-haspopup="listbox" aria-expanded="false">
+                    <input aria-autocomplete="list" aria-controls="job-search-bar-location-typeahead-list" aria-label="타인의 정보 검색" name="keywords" class="dismissable-input__input" placeholder="포트폴리오 검색" autocomplete="off" maxlength="500" type="search">
+                    <button class="dismissable-input__button dismissable-input__button--show" type="button">
+                        <label class="screen-reader-text">닫기</label>
+                        <icon class="dismissable-input__button-icon lazy-loaded" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" focusable="false" class="lazy-loaded">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path fill="currentColor" d="M7.90356 9.19393l-3.3763 3.3763-1.29037-1.29037 3.3763-3.3763-3.3763-3.3763 1.29037-1.29037 3.3763 3.3763 3.3763-3.3763 1.29037 1.29037-3.3763 3.3763 3.3763 3.3763-1.29037 1.29037z"></path>
+                                    <path d="M0 0h16v16H0z"></path>
+                                </g>
+                            </svg>
+                        </icon>
+                    </button>
+                </section>
+                <button class="base-search-bar__submit-btn" aria-label="검색" type="submit">
+                    <icon class="base-search-bar__search-icon onload lazy-loaded" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24px" height="24px" version="1.1" focusable="false" class="lazy-loaded">
+                            <path d="M21,19.67l-5.44-5.44a7,7,0,1,0-1.33,1.33L19.67,21ZM10,15.13A5.13,5.13,0,1,1,15.13,10,5.13,5.13,0,0,1,10,15.13Z" class="large-icon" style="fill: currentColor; color: #7a8b98;" id="search-icon-large"></path>
+                        </svg>
+                    </icon>
+                </button>
+            </section>
+
+            <div class = "nav__cta-container">
+                <a class = "nav__button-tertiary" href = "./Login.html">로그인</a>
+                <a class = "nav__button-secondary" href = "./Join.html">회원 가입</a>
+            </div>
+        </nav>
+    </header>
+        
+    <main>
+        <div class = "profile">
+            <img src="img/user.png" id="profile">
+            <div class = "info_1">
+                <div class = "info_2">
+                    <h2>KMU_123</h2>
+                    <button type="button" id = "btn_setting"><a href = "./profile_change.html" class ="profile_change_button">프로필 편집</a></button>
+                </div>
+    
+                <div class = "item">
+                    <span>친구 : 0</span>
+                </div>
+    
+                <div class = "Name">
+                    <strong>홍길동</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class = "card">
+            <h1>명함</h1>
+            <label class ="input-file-button">
+                명함생성<input type="file" style="display: none">
+            </label>
+            <div class = "picture">
+                <img src="img/명함디자인2.PNG" alt = "명함1" width ="200px" height="150px">
+                <img src="img/명함디자인4.PNG" alt = "명함2"width ="200px" height="150px">
+            </div>
+        </div>
+
+        <div class = "post">
+            <h1>활동</h1>
+            <label class ="input-file-button">
+                업로드<input type="file" style="display: none">
+            </label>
+            <div class = "picture">
+                <section class ="top-card-layout">
+                    <div class ="top-card-layout__card">
+                        <a target="_self" href="https://github.com/">
+                            <img alt="Tinder" class="artdeco-entity-image artdeco-entity-image--square-5 lazy-loaded" src="./img/github_image.PNG">
+                        </a>
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="top-card-layout__entity-info-container">
+                            <div class="top-card-layout__entity-info">
+                            <a data-tracking-will-navigate="" data-tracking-control-name="public_jobs_topcard-title" href="https://kr.linkedin.com/jobs/view/marketing-assistant-at-tinder-2605840810?refId=Sk%2BnaTCyWKzejwlza%2FPFnQ%3D%3D&amp;trackingId=nwDIqzD8VPpKojIBpNakFQ%3D%3D&amp;trk=public_jobs_topcard-title">
+                              <h2 class="top-card-layout__title topcard__title">Marketing Assistant</h2>
+                            </a>
+                            <h4 class="top-card-layout__second-subline">
+                            <div class="topcard__flavor-row">
+                                <span class="topcard__flavor">
+                                    <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/tinder-incorporated?trk=public_jobs_topcard-org-name" data-tracking-will-navigate="" data-tracking-control-name="public_jobs_topcard-org-name" class="topcard__org-name-link topcard__flavor--black-link">
+                                    github
+                                    </a>
+                                </span>
+                                <span class="topcard__flavor topcard__flavor--bullet">
+                                    서울
+                                </span>
+                            </div>
+                            <div class="topcard__flavor-row">
+                            <span class="posted-time-ago__text topcard__flavor--metadata">
+                      6일 전
+                        </span>
+                          <span class="num-applicants__caption topcard__flavor--metadata topcard__flavor--bullet">
+                            마지막 commit
+                          </span>
+                          </div>
+                        <div class="face-pile see-who-was-hired">
+                        <div class="face-pile__images-container">
+                        <img alt="" class="artdeco-entity-image artdeco-entity-image--circle-1 face-pile__image face-pile__image--1 lazy-loaded" src="./img/kakao_basic.jpg">
+                        <img alt="" class="artdeco-entity-image artdeco-entity-image--circle-1 face-pile__image face-pile__image--1 lazy-loaded" src="./img/kakao_basic.jpg">
+                        <img alt="" class="artdeco-entity-image artdeco-entity-image--circle-1 face-pile__image face-pile__image--1 lazy-loaded" src="./img/kakao_basic.jpg">
+                        </div>
+                            <a href="" class="face-pile__cta">
+                              같이 프로젝트를 많이한 사람 알아보기
+                            </a>
+                        </div>
+                                </h4>
+                  
+                              <div class="top-card-layout__cta-container">
+                        <a target="_blank" rel="nofollow noopener"class="apply-button apply-button--link top-card-layout__cta top-card-layout__cta--primary">
+                            개인 페이지 방문
+                            <icon data-svg-class-name="apply-button__offsite-apply-icon-svg" aria-hidden="true" class="lazy-loaded"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="16" height="16" viewBox="0 0 16 16" focusable="false" class="apply-button__offsite-apply-icon-svg lazy-loaded">
+                    <path style="fill:#fff" d="M12,10v3a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1V5A1,1,0,0,1,3,4H6V6H4v6h6V10h2Zm1-8H8V4h2.67L6,8.67,7.33,10,12,5.33V8h2V3A1,1,0,0,0,13,2Z"></path>
+                  </svg></icon>
+                        </a>
+                    
+                        
+                  
+                                  
+                            <button class="top-card-layout__cta top-card-layout__cta--secondary save-job-modal-outlet">
+                              저장
+                            </button>
+                            
+                      
+                  
+                      
+                  
+                      
+                      <div>
+                  <!---->
+                        <div class="modal save-job-modal" id="save-job-modal">
+                          <div class="modal__overlay">
+                            <section class="modal__wrapper" tabindex="-1" aria-labelledby="save-job-modal-modal-header" role="dialog" aria-modal="true">
+                    </div>
+                </section>
+                
+                <!-- <img src="img/멋사.PNG" alt = "명함1" width ="200px" height="150px">
+                <img src="img/해커톤.jpg" alt = "명함2"width ="200px" height="150px"> -->
+            </div>
+        </div>
+    </main>
+
+
+</body>
+</html>

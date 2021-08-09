@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .main_nav{
+                position: relative;
+                font-size: 1.5rem;
+                margin:0px auto;
+                padding: 1rem;
+                max-width: 1128px;
+                display: flex;
+                align-items: center;
+        }
+        #main_logo{
+            float:left;
+            margin-right: 50rem;
+        }
+        .nav_option{
+            font-size: 1.2rem;
+            margin: 0.5rem auto;
+        }
+        #login_main{
+            float:right;
+            color:#c8d9eb;
+            margin-left: 0.5rem;
+        }
+        #wrapper{
+            width: 600px;
+            margin: 50px auto;
+            height: 400px;
+            position: relative;
+        }
+        #slider_wrap{
+            width:600px;
+            height:400px;
+            position:relative;
+            overflow:hidden;
+        }
+        #slider_wrap ul#slider{
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #slider_wrap ul#slider li{
+            float:left;
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class = "main_nav">
+            <a id = "main_logo" alt = "logo">Profile Page</a>
+            <div class = "nav_option">
+                <a id = "login_main" alt ="login">로그인</a>
+                <a id = "sign_up_main" alt="sign_up">회원가입</a>
+            </div>
+        </nav>
+        <aside>
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+            <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
+            <div id="wrapper">
+                <div id="slider_wrap">
+                    <ul id="slider">
+                        <li>
+                          <div>
+                              <h3>Slide #1</h3>
+                              <span>Sub-title #1</span>
+                          </div>                
+                        <img src="https://fakeimg.pl/350x200/960a96/000?text=11111">
+                        </li>
+                        <li>
+                            <div>
+                              <h3>Slide #2</h3>
+                              <span>Sub-title #2</span>
+                            </div>
+                        <img src="https://fakeimg.pl/350x200/D27328/000?text=22222">
+                        </li>
+                        <li>
+                            <div>
+                              <h3>Slide #3</h3>
+                              <span>Sub-title #3</span>
+                            </div>
+                            <img src="https://fakeimg.pl/350x200/FF607F/000?text=33333">
+                        </li>
+                        <li>
+                            <div>
+                              <h3>Slide #4</h3>
+                              <span>Sub-title #4</span>
+                            </div>
+                            <img src="https://fakeimg.pl/350x200/0A6E0A/000?text=44444">
+                        </li>
+                        <li>
+                            <div>
+                              <h3>Slide #5</h3>
+                              <span>Sub-title #5</span>
+                            </div>
+                            <img src="https://fakeimg.pl/350x200/0064CD/000?text=55555">
+                        </li>
+                    </ul>
+                    <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+                    <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+                    <div id="counter"></div>
+                    <div id="pagination-wrap">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </header>
+
+    <main>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

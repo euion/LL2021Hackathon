@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .nav {
+            max-width: 1128px;
+            margin: auto;
+        }
+        .nav {
+            padding: 12px 0 16px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: nowrap;
+        }
+        .nav__cta-container {
+            flex-wrap: nowrap;
+            flex-shrink: 0;
+        }
+        .nav__cta-container {
+            -webkit-box-ordinal-group: 4;
+            order: 3;
+            display: flex;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+        }
+        .nav__button-tertiary.nav__button-tertiary {
+            background-color: rgba(0,0,0,0);
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            height: 32px;
+            line-height: 32px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 8px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 4px;
+            color: rgba(0,0,0,0.6);
+        }
+        .nav__button-secondary.nav__button-secondary {
+            background-color: rgba(0,0,0,0);
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            height: 32px;
+            line-height: 32px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 24px;
+            box-shadow: inset 0 0 0 1px #0a66c2;
+            color: #0a66c2;
+        }
+        .nav__button-secondary:hover{
+            background: skyblue;
+        }
+        .nav-logo {
+            width: 56px;
+            height: 56px;
+        }
+        .nav-logo {
+            display: block;
+            color: #0a66c2;
+        }
+
+        body :lang(ko) {
+            font-family: var(--artdeco-typography-ko);
+        }
+        .base-serp-page__header {
+            background: #fff;
+            margin-bottom: 1px;
+            padding: 0 16px;
+        }
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        .base-serp-page__header .nav, .base-serp-page__filters, .base-serp-page__content {
+            max-width: 1128px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        body :lang(ko) {
+            font-family: var(--artdeco-typography-ko);
+        }
+        .nav .search-bar {
+            -webkit-box-ordinal-group: 3;
+            order: 2;
+        }
+        .search-bar {
+            border-radius: 4px;
+        }
+        .search-bar, .search-bar__mobile-wrapper {
+            display: flex;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            height: 40px;
+            max-width: 100%;
+        }
+        .search-bar {
+            margin: 0 32px;
+            border-radius: 2px;
+        }
+        .search-bar {
+            background-color: rgba(199,209,216,0.35);
+            position: relative;
+            min-width: 0;
+        }
+        :lang(ko) .switcher-tabs__placeholder {
+            line-height: 1.41176;
+        }
+        :lang(ko) .switcher-tabs__placeholder {
+            font-size: 1.2rem;
+        }
+        .switcher-tabs__placeholder {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            padding: 0 12px 0 16px;
+            color: rgba(0,0,0,0.6);
+            border-right: 1px solid rgba(0,0,0,0.15);
+        }
+        .switcher-tabs__button, .switcher-tabs__placeholder {
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button, input {
+            border: 1px solid transparent;
+        }
+        button {
+            background-color: transparent;
+            padding: 0;
+        }
+        button {
+            appearance: auto;
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            text-align: center;
+            font: 400 13.3333px Arial;
+        }
+        .switcher-tabs__placeholder-text {
+            margin: auto;
+        }
+        .lazy-load, .lazy-loaded, [data-delayed-url], [data-delayed-poster], [data-delayed-background] {
+            transition: opacity 334ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .lazy-loaded {
+            opacity: 1;
+        }
+        .switcher-tabs__caret-down-filled {
+            display: block;
+            margin: auto 0;
+        }
+        .switcher-tabs__caret-down-filled {
+            min-height: 24px;
+            min-width: 24px;
+            height: 24px;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+        svg:not(:root) {
+            overflow: hidden;
+        }
+        .search-bar[data-current-search-type="JOBS"] .base-search-bar[data-searchbar-type="JOBS"], .search-bar[data-current-search-type="PEOPLE"] .base-search-bar[data-searchbar-type="PEOPLE"], .search-bar[data-current-search-type="LEARNING"] .base-search-bar[data-searchbar-type="LEARNING"] {
+            display: flex;
+        }
+        .search-bar .base-search-bar {
+            border: none;
+        }
+        .base-search-bar {
+            width: 100%;
+            min-width: 0;
+            border-radius: 2px;
+        }
+        .base-search-bar {
+            height: 100%;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            flex-basis: 0;
+            -webkit-box-align: center;
+            align-items: center;
+            cursor: text;
+        }
+        .base-search-bar__form {
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+            margin: 0;
+        }
+        .base-search-bar__form {
+            width: 100%;
+            height: 100%;
+        }
+        .search-bar .dismissable-input, .search-bar .dismissable-input:focus, .search-bar .dismissable-input.focus, .search-bar .dismissable-input:hover, .search-bar .dismissable-input.hover, .search-bar .dismissable-input:active {
+            background: transparent;
+            box-shadow: none;
+        }
+        .base-search-bar .typeahead-input, .base-search-bar .search-input {
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            height: 100%;
+            border: none;
+            border-radius: 0;
+            border-right: 1px solid rgba(0,0,0,0.15);
+        }
+        .dismissable-input {
+            color: rgba(0,0,0,0.9);
+        }
+        .dismissable-input {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            min-width: 0;
+            position: relative;
+        }
+        :lang(ko) .dismissable-input__input {
+            line-height: 1.41176;
+        }
+        :lang(ko) .dismissable-input__input {
+            font-size: 1.2rem;
+        }
+        .dismissable-input__input[placeholder] {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .dismissable-input__input {
+            font-weight: 400;
+            color: rgba(0,0,0,0.9);
+            background-color: transparent;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            height: 100%;   
+            -webkit-box-flex: 1;
+            flex: 1;
+            padding-left: 8px;
+            -webkit-appearance: none;
+        }
+        input, select {
+            vertical-align: middle;
+        }
+        input[type="search" i] {
+            padding: 1px 2px;
+        }
+        input {
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            text-align: start;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            margin: 0em;
+            font: 400 13.3333px Arial;
+        }
+        .dismissable-input__button--show {
+            cursor: pointer;
+            visibility: visible;
+        }
+        .dismissable-input__button {
+            height: 100%;
+            min-width: 24px;
+            margin-right: 8px;
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+        .screen-reader-text {
+            height: 1px;
+            left: -10000px;
+            overflow: hidden;
+            position: absolute;
+            top: auto;
+            width: 1px;
+        }
+        .dismissable-input__button--show {
+            cursor: pointer;
+            visibility: visible;
+        }
+        svg {
+            width: 16;
+            height: 16;
+        }
+        g{
+            fill: none;
+            fill-rule: evenodd;
+        }
+        .base-search-bar__submit-btn {
+            display: block;
+            height: 100%;
+            flex-basis: 40px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .base-search-bar__search-icon {
+            margin: 0 auto;
+        }
+
+
+
+
+
+        /*-------------------------------------------------------------------------------*/
+
+
+
+        .int:focus{
+            outline: none;
+        }
+        .box {
+            display: block;
+            width: 100%;
+            height: 51px;
+            border: solid 1px #dadada;
+            padding: 10px 14px 10px 14px;
+            box-sizing: border-box;
+            background: #fff;
+            position: relative;
+        }
+        .int {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 29px;
+            border: none;
+            background: #fff;
+            font-size: 15px;
+        }
+        .box.int_id {
+            padding-right: 110px;
+        }
+
+        .box.int_pass {
+            padding-right: 40px;
+        }
+
+        .box.int_pass_check {
+            padding-right: 40px;
+        }
+
+        .step_url {
+            /*@naver.com*/
+            position: absolute;
+            top: 16px;
+            right: 13px;
+            font-size: 15px;
+            color: #8e8e8e;
+        }
+
+        .pswdImg {
+            width: 18px;
+            height: 20px;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            margin-top: -10px;
+            cursor: pointer;
+        }
+
+        #bir_wrap {
+            display: table;
+            width: 100%;
+        }
+
+        #bir_yy {
+            display: table-cell;
+            width: 147px;
+            
+        }
+
+        #bir_mm {
+            display: table-cell;
+            width: 147px;
+            vertical-align: middle;
+        }
+
+        #bir_dd {
+            display: table-cell;
+            width: 147px;
+        }
+
+        #bir_mm, #bir_dd {
+            padding-left: 10px;
+        }
+
+        .sel{
+            width: 100%;
+            height: 29px;
+            font-size: 15px;
+            background: #fff url(https://static.nid.naver.com/images/join/pc/sel_arr_2x.gif) 100% 50% no-repeat;
+            background-size: 20px 8px;
+            -webkit-appearance: none;
+            display: inline-block;
+            text-align: start;
+            border: none;
+            cursor: default;
+            font-family: Dotum,'돋움',Helvetica,sans-serif;
+        }
+        /* 에러메세지 */
+
+        .error_next_box {
+            margin-top: 9px;
+            font-size: 12px;
+            color: red;    
+            display: none;
+        }
+
+        #alertTxt {
+            position: absolute;
+            top: 19px;
+            right: 38px;
+            font-size: 12px;
+            color: red;
+            display: none;
+        }
+
+        /* 버튼 */
+
+        .btn_area {
+            margin: 30px 0 91px;
+        }
+
+        #btnJoin {
+            width: 100%;
+            padding: 21px 0 17px;
+            border: 0;
+            cursor: pointer;
+            color: #fff;
+            background-color: skyblue;
+            font-size: 20px;
+            font-weight: 400;
+            font-family: Dotum,'돋움',Helvetica,sans-serif;
+        }
+
+        .body_sep{
+            width: 40rem;
+            margin: 0px auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class = "base-serp-page__header global-alert=offset">
+        <nav class = "nav" aria-label="기본">
+            <a href = "main_page.html"><img class = "nav-logo" src = "./img/logo3.PNG" alt="IAM site logo"></a>
+
+            <section class = "search-bar">
+                <div class ="switcher-tabs__trigger-and-tabs">
+                    <button aria-expanded="false" class="switcher-tabs__placeholder">
+                        <span class ="switcher-tabs__placeholder-text">정보</span>
+                        <icon class ="switcher-tabs__caret-down-filled onload lazy-loaded" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24px" height="24px" class="artdeco-icon lazy-loaded" focusable="false">
+                                <path d="M5,9h14l-6.2,6.7C12.6,15.9,12.3,16,12,16c-0.3,0-0.6-0.1-0.8-0.3L5,9z" fill="currentColor"></path>
+                            </svg>
+                        </icon>
+                    </button>
+                </div>
+                <section class ="base-search-bar">
+                    <form class="base-search-bar__form" role="search">
+                        <section class="dismissable-input typeahead-input keywords-typeahead-input" role="combobox" aria-owns="job-search-bar-keywords-typeahead-list" aria-haspopup="listbox" aria-expanded="false">
+                            <input aria-autocomplete="list" aria-controls="job-search-bar-keywords-typeahead-list" aria-label="직함이나 회사 검색" name="keywords" class="dismissable-input__input"  placeholder="직함이나 회사 검색" autocomplete="off" maxlength="500" type="search">
+                                <button class="dismissable-input__button dismissable-input__button--show" data-tracking-control-name="public_jobs_dismissable-input-clear" type="button">
+                                    <label class="screen-reader-text">닫기</label>
+                                    <icon class="dismissable-input__button-icon lazy-loaded" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" focusable="false" class="lazy-loaded">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path fill="currentColor" d="M7.90356 9.19393l-3.3763 3.3763-1.29037-1.29037 3.3763-3.3763-3.3763-3.3763 1.29037-1.29037 3.3763 3.3763 3.3763-3.3763 1.29037 1.29037-3.3763 3.3763 3.3763 3.3763-1.29037 1.29037z"></path>
+                                            <path d="M0 0h16v16H0z"></path>
+                                        </g>
+                                    </svg></icon>
+                                </button>
+                        </section>
+                    </form>
+                </section>
+                <section class="dismissable-input typeahead-input location-typeahead-input" role="combobox" aria-owns="job-search-bar-location-typeahead-list" aria-haspopup="listbox" aria-expanded="false">
+                    <input aria-autocomplete="list" aria-controls="job-search-bar-location-typeahead-list" aria-label="타인의 정보 검색" name="keywords" class="dismissable-input__input" placeholder="포트폴리오 검색" autocomplete="off" maxlength="500" type="search">
+                    <button class="dismissable-input__button dismissable-input__button--show" type="button">
+                        <label class="screen-reader-text">닫기</label>
+                        <icon class="dismissable-input__button-icon lazy-loaded" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" focusable="false" class="lazy-loaded">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path fill="currentColor" d="M7.90356 9.19393l-3.3763 3.3763-1.29037-1.29037 3.3763-3.3763-3.3763-3.3763 1.29037-1.29037 3.3763 3.3763 3.3763-3.3763 1.29037 1.29037-3.3763 3.3763 3.3763 3.3763-1.29037 1.29037z"></path>
+                                    <path d="M0 0h16v16H0z"></path>
+                                </g>
+                            </svg>
+                        </icon>
+                    </button>
+                </section>
+                <button class="base-search-bar__submit-btn" aria-label="검색" type="submit">
+                    <icon class="base-search-bar__search-icon onload lazy-loaded" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24px" height="24px" version="1.1" focusable="false" class="lazy-loaded">
+                            <path d="M21,19.67l-5.44-5.44a7,7,0,1,0-1.33,1.33L19.67,21ZM10,15.13A5.13,5.13,0,1,1,15.13,10,5.13,5.13,0,0,1,10,15.13Z" class="large-icon" style="fill: currentColor; color: #7a8b98;" id="search-icon-large"></path>
+                        </svg>
+                    </icon>
+                </button>
+            </section>
+
+            <div class = "nav__cta-container">
+                <a class = "nav__button-tertiary" href = "./Login.html">로그인</a>
+                <a class = "nav__button-secondary" href = "./Join.html">회원 가입</a>
+            </div>
+        </nav>
+    </header>
+    <!-- wrapper -->
+    <div id="wrapper" class = "body_sep">
+
+        <!-- content-->
+        <div id="content">
+
+            <!-- ID -->
+            <div>
+                <h3 class="join_title">
+                    <label for="id">아이디</label>
+                </h3>
+                <span class="box int_id">
+                    <input type="text" id="id" class="int" maxlength="20">
+                    <span class="step_url">@example.com</span>
+                </span>
+                <span class="error_next_box"></span>
+            </div>
+
+            <!-- NAME -->
+            <div>
+                <h3 class="join_title"><label for="name">이름</label></h3>
+                <span class="box int_name">
+                    <input type="text" id="name" class="int" maxlength="20">
+                </span>
+                <span class="error_next_box"></span>
+            </div>
+
+            <!-- BIRTH -->
+            <div>
+                <h3 class="join_title"><label for="yy">생년월일</label></h3>
+
+                <div id="bir_wrap">
+                    <!-- BIRTH_YY -->
+                    <div id="bir_yy">
+                        <span class="box">
+                            <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)">
+                        </span>
+                    </div>
+
+                    <!-- BIRTH_MM -->
+                    <div id="bir_mm">
+                        <span class="box">
+                            <select id="mm" class="sel">
+                                <option>월</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>                                    
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </span>
+                    </div>
+
+                    <!-- BIRTH_DD -->
+                    <div id="bir_dd">
+                        <span class="box">
+                            <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
+                        </span>
+                    </div>
+
+                </div>
+                <span class="error_next_box"></span>    
+            </div>
+
+            <!-- GENDER -->
+            <div>
+                <h3 class="join_title"><label for="gender">성별</label></h3>
+                <span class="box gender_code">
+                    <select id="gender" class="sel">
+                        <option>성별</option>
+                        <option value="M">남자</option>
+                        <option value="F">여자</option>
+                    </select>                            
+                </span>
+                <span class="error_next_box">필수 정보입니다.</span>
+            </div>
+
+            <!-- EMAIL -->
+            <div>
+                <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional"></span></label></h3>
+                <span class="box int_email">
+                    <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
+                </span>
+                <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
+            </div>
+
+            <div>
+                <h3 class="join_title"><label for="phoneNo">직장</label></h3>
+                <span class="box int_mobile">
+                    <input type="tel" id="mobile" class="int" maxlength="16" placeholder="현재 다니고 있는 직장">
+                </span>
+                <span class="error_next_box"></span>    
+            </div>
+
+            
+
+
+            <div class="btn_area">
+                <button type="button" id="btnJoin">
+                    <span>저장하기</span>
+                </button>
+            </div>
+
+        </div> 
+        <!-- content-->
+
+    </div> 
+    <!-- wrapper -->
+    </main>
+</body>
+</html>
