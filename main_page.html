@@ -1,123 +1,705 @@
 <!DOCTYPE html>
+<html lang="ko">
 <head>
     <style>
-        .main_nav{
-                position: relative;
-                font-size: 1.5rem;
-                margin:0px auto;
-                padding: 1rem;
-                max-width: 1128px;
-                display: flex;
-                align-items: center;
+        a:link {
+            color: #666666;
         }
-        #main_logo{
-            float:left;
-            margin-right: 50rem;
+        a, a:focus, a:hover {
+            color: #0a66c2;
         }
-        .nav_option{
+        a {
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: 0;
+            color: #0073b1;
+        }
+        a, a:focus, a:hover {
+            color: #0a66c2;
+        }
+        a {
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: 0;
+            color: #0073b1;
+        }
+        a {
+            text-decoration: none;
+        }
+        a {
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: 0;
+            color: #0073b1;
+        }
+        a {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        a:-webkit-any-link {
+            color: -webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+        html, body, span, object, iframe, h1, h2, h3, h4, h5, h6, abbr, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, var, b, i, label, legend, caption, tbody, tfoot, thead, tr, th, td, canvas, summary, time, mark, audio, video {
+            outline: 0;
+        }
+        .nav {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .nav {
+            max-width: 1128px;
+            margin: auto;
+        }
+        .nav {
+            padding: 12px 0 16px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: nowrap;
+        }
+        .nav__cta-container {
+            flex-wrap: nowrap;
+            flex-shrink: 0;
+        }
+        .nav__cta-container {
+            -webkit-box-ordinal-group: 4;
+            order: 3;
+            display: flex;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+        }
+        .nav__button-tertiary.nav__button-tertiary {
+            background-color: rgba(0,0,0,0);
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            height: 32px;
+            line-height: 32px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 8px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 4px;
+            color: rgba(0,0,0,0.6);
+        }
+        .nav__button-secondary.nav__button-secondary {
+            background-color: rgba(0,0,0,0);
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: inherit;
+            height: 32px;
+            line-height: 32px;
+            overflow: hidden;
+            outline-width: 2px;
+            padding: 0 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            border-radius: 24px;
+            box-shadow: inset 0 0 0 1px #0a66c2;
+            color: #0a66c2;
+        }
+        .nav__button-secondary:hover{
+            background: skyblue;
+        }
+        .nav-logo {
+            width: 56px;
+            height: 56px;
+        }
+        .nav-logo {
+            display: block;
+            color: #0a66c2;
+        }
+        .main {
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .section {
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+        .section--hero {
+            align-content: start;
+            min-height: 700px;
+            padding-bottom: 138px;
+            padding-top: 40px;
+        }
+        .section {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1128px;
+            position: relative;
+        }
+        .hero {
+            width: 100%;
+        }
+        .hero__headline {
+            width: 55%;
+            padding-bottom: 48px;
+        }
+        .hero__headline {
+            font-size: 5.6rem;
+            font-family: sans-serif;
+            color: #2977c9;
+            font-weight: 200;
+            line-height: 70px;
+        }
+        :-webkit-any(article, aside, nav, section) h1 {
+            font-size: 3.1em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+        }
+        h1 {
+            display: block;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        .hero__illustration--desktop {
+            z-index: -1;
+            width: 700px;
+            height: 670px;
+            position: absolute;
+            top: -10px;
+            right: -150px;
+            border-radius: 80%;
+        }
+        .lazy-load, .lazy-loaded, [data-delayed-url], [data-delayed-poster], [data-delayed-background] {
+            transition: opacity 334ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .lazy-loaded {
+            opacity: 1;
+        }
+        .intent-module {
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            height: 100%;
+            margin-bottom: 42px;
+        }
+        .intent-module__list {
+            width: 100%;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        ul {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        li {
+            text-align: left;
+        }
+        li {
+            display: list-item;
+        }
+        .intent-module__button.intent-module__button {
+            box-shadow: 0px -1px 1px rgb(0 0 0 / 8%), 1px 0px 1px rgb(0 0 0 / 8%), -1px 0px 1px rgb(0 0 0 / 8%), 0px 1px 1px rgb(0 0 0 / 8%);
+        }
+        .intent-module__button.intent-module__button {
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+            min-height: 28px;
+            width: 408px;
+            background-color: #fff;
+            border-radius: 5px;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            font-weight: 400;
+            color: rgba(0,0,0,0.9);
+            padding: 16px;
+            margin-bottom: 16px;
+            text-decoration:none
+        }
+        .intent-module__button:hover{
+            background:silver;
+        }
+        .intent-module .chevron-right-icon {
+            margin-left: 16px;
+        }
+        .chevron-right-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .icon {
+            display: inline-flex;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        /* 여기부터 바꿔야 합니다. */
+
+
+        .section--hero+.section {
+            padding-top: 60px;
+            padding-bottom: 120px;
+        }
+        .section {
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+        .section--no-min-height {
+            min-height: 0;
+        }
+        .section {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1128px;
+            position: relative;
+        }
+        .search-cta {
+            width: 100%;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+        }
+        .job-finder-cta {
+            min-width: 408px;
+            margin-right: 72px;
+            -ms-flex-item-align: start;
+            align-self: flex-start;
+        }
+
+        .job-finder-cta__header, .learning-cta__header, .people-cta__header {
+            font-size: 2.6rem;
+            color: rgba(0,0,0,0.9);
+            font-family: sans-serif;
+            line-height: 60px;
+            font-weight: 200;
+        }
+        h2 {
+            font-weight: 400;
+            font-size: 3.2rem;
+            line-height: 1.25;
+            color: rgba(0,0,0,0.9);
+        }
+        h2 {
+            display: block;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        .suggested-search {
+            width: 100%;
+            -webkit-box-flex: 2;
+            flex-grow: 2;
+            align-self: flex-start;
+        }
+        .etta-see-more-less-list__header {
+            margin-bottom: 20px;
+        }
+        .etta-see-more-less-list__header, .etta-slide-list.etta-slide-list .etta-slide-list__heading, .etta-slide-list .slide-list__heading, .recent-searches-card__title {
             font-size: 1.2rem;
-            margin: 0.5rem auto;
+            line-height: 1.5;
+            font-weight: 600;
+            color: rgba(0,0,0,0.6);
+            text-transform: uppercase;
+            line-height: 20px;
         }
-        #login_main{
-            float:right;
-            color:#c8d9eb;
-            margin-left: 0.5rem;
+        .show-more-only, .show-more-less-state, .show-more-less-state__label-less {
+            display: none;
         }
-        #wrapper{
-            width: 600px;
-            margin: 50px auto;
-            height: 400px;
+        button, input {
+            border: 1px solid transparent;
+        }
+        input, select, textarea, button {
+            font-family: inherit;
+        }
+        input, select {
+            vertical-align: middle;
+        }
+        input[type="checkbox" i] {
+            background-color: initial;
+            cursor: default;
+            appearance: auto;
+            margin: 3px 3px 3px 4px;
+            padding: initial;
+        }
+        input {
+            text-rendering: auto;
+            color: -internal-light-dark(black, white);
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            text-align: start;
+            -webkit-rtl-ordering: logical;
+            font: 400 13.3333px Arial;
+        }
+        .etta-see-more-less-list__list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        .pill.pill {
+            font-size: 1.2rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: rgba(0,0,0,0.6);
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            text-align: left;
+            min-height: 56px;
+            height: auto;
+            width: auto;
+            float: left;
+            background-color: rgba(0,0,0,0.08);
+            box-shadow: none;
+            border-radius: 28px;
+            padding: 8px 20px;
+            margin-bottom: 12px;
+            text-decoration:none
+        }
+        .pill {
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-family: inherit;
+            overflow: hidden;
+            outline-width: 2px;
             position: relative;
+            text-decoration: none;
+            transition-duration: 167ms;
+            transition-property: background-color,box-shadow,color,-webkit-box-shadow;
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            vertical-align: middle;
+            z-index: 0;
+            margin: 0 6px 8px 0;
         }
-        #slider_wrap{
-            width:600px;
-            height:400px;
-            position:relative;
-            overflow:hidden;
+        .show-more-less-state__label-more {
+            display: block;
         }
-        #slider_wrap ul#slider{
-            width:100%;
-            height:100%;
-            position:absolute;
-            top:0;
-            left:0;
+        .show-more-less-state__label, .show-more-less-state__label:focus, .show-more-less-state__label:hover {
+            color: #0a66c2;
         }
-        #slider_wrap ul#slider li{
-            float:left;
-            position: relative;
-            width: 600px;
-            height: 400px;
+        .show-more-less-state__label {
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            user-select: none;
         }
-        
+        .etta-see-more-less-list__show-more {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            font-weight: 600;
+            color: rgba(0,0,0,0.6);
+        }
+        .etta-see-more-less-list__sr-only {
+            border: 0 !important;
+            clip: rect(1px, 1px, 1px, 1px);
+            height: 1px !important;
+            overflow: hidden;
+            padding: 0 !important;
+            position: absolute !important;
+            white-space: nowrap !important;
+            width: 1px !important;
+        }
+        .chevron-down-icon {
+            -webkit-transform: rotate(
+            180deg
+            );
+                transform: rotate(
+            180deg
+            );
+        }
+        .chevron-down-icon, .chevron-up-icon {
+            width: 15px;
+            height: 15px;
+            margin-left: 4px;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav class = "main_nav">
-            <a id = "main_logo" alt = "logo">Profile Page</a>
-            <div class = "nav_option">
-                <a id = "login_main" alt ="login">로그인</a>
-                <a id = "sign_up_main" alt="sign_up">회원가입</a>
+    <nav class = "nav" aria-label="Primary">
+        <a href = "main_page.html"><img class = "nav-logo" src = "./img/logo3.PNG" alt="IAM site logo"></a>
+        <div class = "nav__cta-container">
+            <a class = "nav__button-tertiary" href = "./Login.html">로그인</a>
+            <a class = "nav__button-secondary" href = "./Join.html">회원 가입</a>
+        </div>
+    </nav>
+    <main class ="main" role = "main" id = "main-content">
+        <section class ="section section--hero">
+            <div class = "hero">
+                <h1 class = "hero__headline hero__headline--basic">자신의 포트폴리오를 직접 채워보세요</h1>
+                <img class="hero__illustration--desktop flip-rtl lazy-loaded" alt="main image" src="./img/main_image.jpg">
             </div>
-        </nav>
-        <aside>
-            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-            <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
-            <link href='https://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
-            <div id="wrapper">
-                <div id="slider_wrap">
-                    <ul id="slider">
-                        <li>
-                          <div>
-                              <h3>Slide #1</h3>
-                              <span>Sub-title #1</span>
-                          </div>                
-                        <img src="https://fakeimg.pl/350x200/960a96/000?text=11111">
-                        </li>
-                        <li>
-                            <div>
-                              <h3>Slide #2</h3>
-                              <span>Sub-title #2</span>
-                            </div>
-                        <img src="https://fakeimg.pl/350x200/D27328/000?text=22222">
-                        </li>
-                        <li>
-                            <div>
-                              <h3>Slide #3</h3>
-                              <span>Sub-title #3</span>
-                            </div>
-                            <img src="https://fakeimg.pl/350x200/FF607F/000?text=33333">
-                        </li>
-                        <li>
-                            <div>
-                              <h3>Slide #4</h3>
-                              <span>Sub-title #4</span>
-                            </div>
-                            <img src="https://fakeimg.pl/350x200/0A6E0A/000?text=44444">
-                        </li>
-                        <li>
-                            <div>
-                              <h3>Slide #5</h3>
-                              <span>Sub-title #5</span>
-                            </div>
-                            <img src="https://fakeimg.pl/350x200/0064CD/000?text=55555">
-                        </li>
-                    </ul>
-                    <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
-                    <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
-                    <div id="counter"></div>
-                    <div id="pagination-wrap">
-                        <ul>
-                        </ul>
-                    </div>
+            <div class = "intent-module">
+                <ul class = "intent-module__list">
+                    <li>
+                        <a class = "intent-module__button" href="./profile.html">
+                            프로필 보기
+                            <icon aria-hidden="true" class ="cheron-right-icon lazy-loaded">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="artdeco-icon lazy-loaded" focusable="false"><path d="M14 12L8 3.06 9.55 2l6.19 9.15a1.5 1.5 0 010 1.69L9.55 22 8 20.94z" fill="rgba(0, 0, 0, 0.6)"></path></svg>
+                            </icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a class = "intent-module__button" href="./profile_change.html">
+                            프로필 수정
+                            <icon aria-hidden="true" class ="cheron-right-icon lazy-loaded">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="artdeco-icon lazy-loaded" focusable="false"><path d="M14 12L8 3.06 9.55 2l6.19 9.15a1.5 1.5 0 010 1.69L9.55 22 8 20.94z" fill="rgba(0, 0, 0, 0.6)"></path></svg>
+                            </icon>
+                        </a>
+                    </li>
+                    <li> 
+                        <a class = "intent-module__button" href="#">
+                            프로필 찾기
+                            <icon aria-hidden="true" class ="cheron-right-icon lazy-loaded">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="artdeco-icon lazy-loaded" focusable="false"><path d="M14 12L8 3.06 9.55 2l6.19 9.15a1.5 1.5 0 010 1.69L9.55 22 8 20.94z" fill="rgba(0, 0, 0, 0.6)"></path></svg>
+                            </icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!--                                           여기                                         -->
+        <section class="section section--no-min-height">
+            <div class="search-cta">
+                <div class="job-finder-cta">
+                    <h2 class="job-finder-cta__header">관심있는 분야의 항목을 선택 해주세요</h2>   
+                </div>
+                <div class="suggested-search">
+                    <div class="etta-see-more-less-list">
+                        <h2 class="etta-see-more-less-list__header">
+                        Suggested Searches
+                        </h2>
+                        <div class="see-more-less-list ">
+                            <input id="suggestedSearch-show-more-less-state" class="show-more-less-state " type="checkbox">
+                                <ul class="etta-see-more-less-list__list">
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#"class="pill">
+                                            Engineering
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#"class="pill">
+                                            Business Development
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#"class="pill">
+                                            Finance
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#"class="pill">
+                                            Administrative Assistant
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#"class="pill">
+                                            Retail Associate
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#"class="pill">
+                                            Customer Service
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#"class="pill">
+                                            Operations
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#"class="pill">
+                                            Information Technology
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#" class="pill">
+                                            Marketing
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item ">
+                                        <a href="#" class="pill">
+                                            Human Resources
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Healthcare Service
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Sales
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Program and Project Management
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Accounting
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Arts and Design
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Community and Social Services
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Consulting
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Education
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Entrepreneurship
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Legal
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Media and Communications
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Military and Protective Services
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Product Management
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Purchasing
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Quality Assurance
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Real Estate
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Research
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Support
+                                        </a>
+                                    </li>
+                                    <li class="suggested-search__pill see-more-less-list__list-item show-more-only">
+                                        <a href="#" class="pill">
+                                            Administrative
+                                        </a>
+                                    </li>
+                                </ul>
+                                <label for="suggestedSearch-show-more-less-state" data-tracking-control-name="homepage-basic_suggested-search_showMore" tabindex="0" role="button" aria-expanded="false" class="show-more-less-state__label show-more-less-state__label-more">
+                                    <span aria-hidden="true" class="etta-see-more-less-list__show-more">Show more</span>
+                                    <span class="etta-see-more-less-list__sr-only">Show more Suggested Searches</span>
+                                    <icon aria-hidden="true" class="chevron-down-icon lazy-loaded"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="artdeco-icon lazy-loaded" focusable="false"><path d="M8 7l-5.9 4L1 9.5l6.2-4.2c.5-.3 1.2-.3 1.7 0L15 9.5 13.9 11 8 7z" fill="rgba(0, 0, 0, 0.6)"></path></svg></icon>
+                                </label>
+                                <label for="suggestedSearch-show-more-less-state" data-tracking-control-name="homepage-basic_suggested-search_showLess" tabindex="0" role="button" aria-expanded="false" class="show-more-less-state__label show-more-less-state__label-less">
+                                    <span aria-hidden="true" class="etta-see-more-less-list__show-more">Show less</span>
+                                    <span class="etta-see-more-less-list__sr-only">Show less Suggested Searches</span>
+                                    <icon aria-hidden="true" class="chevron-up-icon lazy-loaded"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" class="artdeco-icon lazy-loaded" focusable="false"><path d="M8 7l-5.9 4L1 9.5l6.2-4.2c.5-.3 1.2-.3 1.7 0L15 9.5 13.9 11 8 7z" fill="rgba(0, 0, 0, 0.6)"></path></svg></icon>
+                                </label>
+                        </div>
+                    </div>  
                 </div>
             </div>
-        </aside>
-    </header>
-
-    <main>
+        </section>
     </main>
-    <footer>
-    </footer>
 </body>
 </html>
